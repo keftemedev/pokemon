@@ -1,0 +1,18 @@
+<div class="pokemon-cards-container">
+  <div class="pokemon-card" *ngFor="let pokemon of pokemons">
+    <div class="card-header">
+      <p class="card-id">ID: {{ pokemon.id }}</p>
+    </div>
+    <div class="card-body">
+      <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="card-image">
+      <h3 class="card-title">{{ pokemon.name }}</h3>
+      <div class="info">
+        <p>{{ pokemon.height }} <br>Height</p>
+        <p>{{ pokemon.experience }} <br>Experience</p>
+        <p>{{ pokemon.order }} <br> Order</p>
+      </div>
+      <button (click)="viewDetails(pokemon.id)" class="show-more-button">View Details</button>
+    </div>
+  </div>
+</div>
+<button (click)="loadMorePokemons()" class="load-more-button">Load More</button>

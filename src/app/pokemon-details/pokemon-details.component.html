@@ -1,0 +1,23 @@
+<div class="header">
+  <a href="https://pokeapi.co/" class="pokemon-world-link">Pokemon World</a>
+</div>
+<div class="pokemon-details">
+  <div class="block_image">
+    <img [src]="pokemon.image" alt="{{ pokemon.name }}" class="pokemon-image">
+  </div>
+  <div class="pokemon-info">
+    <div class="pokemon-details-info">
+      <p>ID: {{pokemon.id}}</p>
+      <p>Title: {{ pokemon.name }}</p>
+      <p>Height: {{ pokemon.height }}</p>
+      <p>Weight: {{ pokemon.weight }}</p>
+    </div>
+    <h3>Stats:</h3>
+    <div class="stats-container">
+      <div class="stat" *ngFor="let stat of pokemon.stats">
+        <span class="stat-name">{{ stat.stat.name }}:</span>
+        <span class="stat-value">{{ stat.base_stat }}</span>
+      </div>
+    </div>
+  </div>
+</div>
